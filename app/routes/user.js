@@ -79,8 +79,7 @@ module.exports.setRouter = (app) => {
          {
                 "mobileNumber": 2234435524,
                 "email": "someone@mail.com",
-                "lastName": "Sengar",
-                "firstName": "Rishabh",
+                "userName": "Sengar",
                 "meeting":[],
                 "userId": "-E9zxTYA8",
 
@@ -88,8 +87,7 @@ module.exports.setRouter = (app) => {
           {
                 "mobileNumber": 333435524,
                 "email": "someone@mail.com",
-                "lastName": "yash",
-                "firstName": "Rishabh",
+                "userName": "yash",
                 "meeting":[],
                 "userId": "-E9zxTYA8",
 
@@ -108,8 +106,7 @@ module.exports.setRouter = (app) => {
      *
      * @apiParam {string} email email of the user. (body params) (required)
      * @apiParam {string} password password of the user. (body params) (required)
-     * @apiParam {string} firstName firstName of the user. (body params) (required)
-     * @apiParam {string} lastName lastName of the user. (body params) (required)
+     * @apiParam {string} userName firstName of the user. (body params) (required)
      * @apiParam {number} mobileNumber mobileNumber of the user. (body params) (required)
      * 
      *
@@ -123,8 +120,7 @@ module.exports.setRouter = (app) => {
             "data": {
                 "mobileNumber": 2234435524,
                 "email": "someone@mail.com",
-                "lastName": "Sengar",
-                "firstName": "Rishabh",
+                "userName": "Sengar",
                 "meeting":[],
                 "userId": "-E9zxTYA8",
                 "password":"encrypted"
@@ -150,7 +146,7 @@ module.exports.setRouter = (app) => {
      * @apiSuccessExample {object} Success-Response:
          {
             "error": false,
-            "message": "Login Successful",
+            "message": "Delete Successful",
             "status": 200,
             "data": {
                 n:1,
@@ -178,15 +174,14 @@ module.exports.setRouter = (app) => {
      * @apiSuccessExample {object} Success-Response:
          {
             "error": false,
-            "message": "Login Successful",
+            "message": "meeting returned Successful",
             "status": 200,
             "data": {[
                 "userDetails": {
                 "mobileNumber": 2234435524,
                 "email": "someone@mail.com",
-                "lastName": "Sengar",
+                "userName": "Sengar",
                 "meeting":[],
-                "firstName": "Rishabh",
                 "userId": "-E9zxTYA8"
             ]}
 
@@ -216,7 +211,7 @@ module.exports.setRouter = (app) => {
      * @apiSuccessExample {object} Success-Response:
          {
             "error": false,
-            "message": "Login Successful",
+            "message": "update Successful",
             "status": 200,
             "data": {
                 n:1,
@@ -251,8 +246,7 @@ module.exports.setRouter = (app) => {
                 "userDetails": {
                 "mobileNumber": 2234435524,
                 "email": "someone@mail.com",
-                "lastName": "Sengar",
-                "firstName": "Rishabh",
+                "userName": "Sengar",
                 "userId": "-E9zxTYA8"
             }
 

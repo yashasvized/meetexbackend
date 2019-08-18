@@ -20,7 +20,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "      {\n        \"error\": false,\n            \"message\": \"all user found\",\n            \"status\": 200,\n     \n      [\n         {\n                \"mobileNumber\": 2234435524,\n                \"email\": \"someone@mail.com\",\n                \"lastName\": \"Sengar\",\n                \"firstName\": \"Rishabh\",\n                \"meeting\":[],\n                \"userId\": \"-E9zxTYA8\",\n\n        },\n          {\n                \"mobileNumber\": 333435524,\n                \"email\": \"someone@mail.com\",\n                \"lastName\": \"yash\",\n                \"firstName\": \"Rishabh\",\n                \"meeting\":[],\n                \"userId\": \"-E9zxTYA8\",\n\n        }\n    ]\n}",
+          "content": "      {\n        \"error\": false,\n            \"message\": \"all user found\",\n            \"status\": 200,\n     \n      [\n         {\n                \"mobileNumber\": 2234435524,\n                \"email\": \"someone@mail.com\",\n                \"userName\": \"Sengar\",\n                \"meeting\":[],\n                \"userId\": \"-E9zxTYA8\",\n\n        },\n          {\n                \"mobileNumber\": 333435524,\n                \"email\": \"someone@mail.com\",\n                \"userName\": \"yash\",\n                \"meeting\":[],\n                \"userId\": \"-E9zxTYA8\",\n\n        }\n    ]\n}",
           "type": "object"
         }
       ]
@@ -84,7 +84,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        n:1,\n        nmodified:1,\n        nok:1\n    }\n\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Delete Successful\",\n    \"status\": 200,\n    \"data\": {\n        n:1,\n        nmodified:1,\n        nok:1\n    }\n\n}",
           "type": "object"
         }
       ]
@@ -120,15 +120,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "string",
             "optional": false,
-            "field": "firstName",
+            "field": "userName",
             "description": "<p>firstName of the user. (body params) (required)</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "lastName",
-            "description": "<p>lastName of the user. (body params) (required)</p>"
           },
           {
             "group": "Parameter",
@@ -155,7 +148,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Signup Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"lastName\": \"Sengar\",\n        \"firstName\": \"Rishabh\",\n        \"meeting\":[],\n        \"userId\": \"-E9zxTYA8\",\n        \"password\":\"encrypted\"\n\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Signup Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"userName\": \"Sengar\",\n        \"meeting\":[],\n        \"userId\": \"-E9zxTYA8\",\n        \"password\":\"encrypted\"\n\n}",
           "type": "object"
         }
       ]
@@ -205,7 +198,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUertyuiopojhgfdwertyuVCJ9.MCwiZXhwIjoxNTIwNDI29tIiwibGFzdE5hbWUiE4In19.hAR744xIY9K53JWm1rQ2mc\",\n        \"userDetails\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"lastName\": \"Sengar\",\n        \"firstName\": \"Rishabh\",\n        \"userId\": \"-E9zxTYA8\"\n    }\n\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUertyuiopojhgfdwertyuVCJ9.MCwiZXhwIjoxNTIwNDI29tIiwibGFzdE5hbWUiE4In19.hAR744xIY9K53JWm1rQ2mc\",\n        \"userDetails\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"userName\": \"Sengar\",\n        \"userId\": \"-E9zxTYA8\"\n    }\n\n}",
           "type": "object"
         }
       ]
@@ -290,7 +283,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        n:1,\n        nmodified:1,\n        nok:1\n    }\n\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"update Successful\",\n    \"status\": 200,\n    \"data\": {\n        n:1,\n        nmodified:1,\n        nok:1\n    }\n\n}",
           "type": "object"
         }
       ]
@@ -340,7 +333,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {[\n        \"userDetails\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"lastName\": \"Sengar\",\n        \"meeting\":[],\n        \"firstName\": \"Rishabh\",\n        \"userId\": \"-E9zxTYA8\"\n    ]}\n\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"meeting returned Successful\",\n    \"status\": 200,\n    \"data\": {[\n        \"userDetails\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"userName\": \"Sengar\",\n        \"meeting\":[],\n        \"userId\": \"-E9zxTYA8\"\n    ]}\n\n}",
           "type": "object"
         }
       ]

@@ -394,36 +394,76 @@ let addAMeeting = (req, res) => {
                     let apiResponse = response.generate(true, 'No User Found', 404, null)
                     res.send(apiResponse)
                 } else {
-                    sendmail({
-                        from: req.body.adminEmail,
-                        to: req.body.userEmail,
-                        subject: 'New meeting has been created by '+req.body.adminName+"-admin",
-                        html: `<h3>Title :${req.body.title}</h3>
-                                <h3>Description : ${req.body.description}</h3>
-                                <h3>Starts at : ${req.body.timestart}</h3>
-                                <h3>Ends at : ${req.body.timeend}`
-                      }, function (err, reply) {
-                        console.log(err && err.stack)
-                        console.dir(reply)
-                      })
+                     nodemailer.createTestAccount((err,account)=>{
+            // create reusable transporter object using the default SMTP transport
+            let transporter = nodemailer.createTransport({
+              host: 'smtp.gmail.com',
+              port: 465,
+              secure: true,
+                 auth: {
+                   user: "yashzed123@gmail.com", // generated ethereal user
+                   pass: "a12345678@" // generated ethereal password
+                 }
+               });
+        
+                    
+                  // send mail with defined transport object
+                  let info={
+                    from: 'yashzed123@gmail.com', // sender address
+                    to: req.body.userEmail, // list of receivers
+                    subject: 'New Meeting has been created by '+req.body.adminName+"-admin", // Subject line
+                    html:  `<h3>Title :${req.body.title}</h3>
+                    <h3>Description : ${req.body.description}</h3>
+                    <h3>Starts at : ${req.body.timestart}</h3>
+                    <h3>Ends at : ${req.body.timeend}`// html body
+                  };
+                  transporter.sendMail(info,(error,inf)=>{
+                    if(error){
+                       return console.log(error)
+                    }
+                    else{
+                        console.log("Your email has been sent")
+                    }
+                })
+                 })
                     delete result.password;
                     let apiResponse = response.generate(false, 'create', 200, result)
                     res.send(apiResponse)
                 }
             })
         } else {
-            sendmail({
-                from: req.body.adminEmail,
-                to: req.body.userEmail,
-                subject: 'Meeting has been updated by '+req.body.adminName+"-admin",
-                html: `<h3>Title :${req.body.title}</h3>
+            nodemailer.createTestAccount((err,account)=>{
+                // create reusable transporter object using the default SMTP transport
+                let transporter = nodemailer.createTransport({
+                  host: 'smtp.gmail.com',
+                  port: 465,
+                  secure: true,
+                     auth: {
+                       user: "yashzed123@gmail.com", // generated ethereal user
+                       pass: "a12345678@" // generated ethereal password
+                     }
+                   });
+            
+                        
+                      // send mail with defined transport object
+                      let info={
+                        from: 'yashzed123@gmail.com', // sender address
+                        to: req.body.userEmail, // list of receivers
+                        subject: 'Meeting has been updated by '+req.body.adminName+"-admin", // Subject line
+                        html:  `<h3>Title :${req.body.title}</h3>
                         <h3>Description : ${req.body.description}</h3>
                         <h3>Starts at : ${req.body.timestart}</h3>
-                        <h3>Ends at : ${req.body.timeend}`
-              }, function (err, reply) {
-                console.log(err && err.stack)
-                console.dir(reply)
-              })
+                        <h3>Ends at : ${req.body.timeend}`// html body
+                      };
+                      transporter.sendMail(info,(error,inf)=>{
+                        if(error){
+                           return console.log(error)
+                        }
+                        else{
+                            console.log("Your email has been sent")
+                        }
+                    })
+                     })
             delete result.password;
             let apiResponse = response.generate(false, 'update', 200, result)
             res.send(apiResponse)
@@ -446,18 +486,38 @@ let deleteAMeeting = (req, res) => {
             res.send(apiResponse)
         }else {
             console.log(result.n)
-            sendmail({
-                from: req.body.adminEmail,
-                to: req.body.userEmail,
-                subject: 'Meeting has been deleted by '+req.body.adminName+"-admin",
-                html: `<h3>Title :${req.body.title}</h3>
+            nodemailer.createTestAccount((err,account)=>{
+                // create reusable transporter object using the default SMTP transport
+                let transporter = nodemailer.createTransport({
+                  host: 'smtp.gmail.com',
+                  port: 465,
+                  secure: true,
+                     auth: {
+                       user: "yashzed123@gmail.com", // generated ethereal user
+                       pass: "a12345678@" // generated ethereal password
+                     }
+                   });
+            
+                        
+                      // send mail with defined transport object
+                      let info={
+                        from: 'yashzed123@gmail.com', // sender address
+                        to: req.body.userEmail, // list of receivers
+                        subject: 'Meeting has been deleted by '+req.body.adminName+"-admin", // Subject line
+                        html:  `<h3>Title :${req.body.title}</h3>
                         <h3>Description : ${req.body.description}</h3>
                         <h3>Starts at : ${req.body.timestart}</h3>
-                        <h3>Ends at : ${req.body.timeend}`
-              }, function (err, reply) {
-                console.log(err && err.stack)
-                console.dir(reply)
-              })
+                        <h3>Ends at : ${req.body.timeend}`// html body
+                      };
+                      transporter.sendMail(info,(error,inf)=>{
+                        if(error){
+                           return console.log(error)
+                        }
+                        else{
+                            console.log("Your email has been sent")
+                        }
+                    })
+                     })
             delete result.password;
             let apiResponse = response.generate(false, 'Userdd meeting updated', 200, result)
             res.send(apiResponse)

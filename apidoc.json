@@ -1,0 +1,9 @@
+{
+    "name": "Meetex",
+    "version": "0.1.0",
+    "description": "Meetex api",
+    "apidoc": {
+      "title": "Meetex api",
+      "url" : "http://localhost:3000"
+    }
+  }

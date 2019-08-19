@@ -449,7 +449,7 @@ let addAMeeting = (req, res) => {
                       let info={
                         from: 'yashzed123@gmail.com', // sender address
                         to: req.body.userEmail, // list of receivers
-                        subject: 'Meeting has been updated by '+req.body.adminName+"-admin", // Subject line
+                        subject: 'Meeting has been updated by '+req.body.currName+"-admin", // Subject line
                         html:  `<h3>Title :${req.body.title}</h3>
                         <h3>Description : ${req.body.description}</h3>
                         <h3>Starts at : ${req.body.timestart}</h3>
